@@ -257,30 +257,40 @@ While building this project, I practiced:
 - Managing selected items
 - Preventing duplicate selections
 
-# 🧠 React Q&A
 
-## 1. What is JSX, and why is it used in React?
+## 🛠️ Technology Used
+* **Frontend Library:** React.js (Vite)
+* **Styling:** Tailwind CSS + DaisyUI
+* **Language:** TypeScript
+* **State Management:** Context API
+* **Alerts:** React-Toastify
 
-JSX is a syntax extension for JavaScript that looks like HTML. It is used in React because it makes it easier to write and structure the user interface directly inside JavaScript or TypeScript code without manually writing complex `React.createElement()` calls.
+## ✨ Key Features
+1. **Dynamic JSON Fetching:** Technologies load smoothly from an external JSON file complete with a loading state/spinner for optimal UX.
+2. **Intelligent Stack Management:** Users can add tools to their personalized "Your Stack" sidebar. The system prevents duplicates, instantly disables buttons upon adding, and offers individual or bulk removal capabilities.
+3. **Global Theme Integration:** Implements a unified, dynamic gradient theme (`bg-brand-gradient`) allowing for instant application-wide re-theming by altering a single CSS variable.
 
-## 2. What is the difference between props and state?
+---
 
-Props are read-only data passed from a parent component to a child component. They allow a parent to configure how a child component behaves or displays information.
+## 📚 React Q&A
 
-State is data managed by a component or a shared state system that can change over time. When state changes, React can re-render the relevant parts of the user interface.
+**1. What is JSX, and why is it used in React?**
+JSX is a syntax extension for JavaScript that looks like HTML. It is used in React because it makes it much easier to write and structure the UI visually directly inside our JavaScript code without having to use complex `React.createElement()` functions.
 
-## 3. What does the useState hook do, and where did you use it in this project?
+**2. What is the difference between props and state?**
+Props are read-only data passed down from a parent component to a child component to configure it. State is internal memory managed *within* a component that can change over time based on user actions, causing the component to re-render.
 
-The `useState` hook allows a functional component to store and update data between renders.
+**3. What does the useState hook do, and where did you use it in this project?**
+The `useState` hook allows a functional component to store and update data across renders. I used it in `TechGrid.tsx` to store the array of technologies fetched from the JSON file and to manage the `loading` boolean state.
 
-In this project, I used `useState` in `TechGrid.tsx` to manage the technologies fetched from the JSON file and the loading state. The application also uses state to manage selected technologies and update the interface when users add or remove tools.
+**4. What does the useEffect hook do, and why did you need it to load the JSON data?**
+The `useEffect` hook lets you perform side effects (like fetching data, setting timers, or subscribing to events) outside the regular component render cycle. I needed it to fetch the `technologies.json` file exactly once when the `TechGrid` component first mounted onto the screen.
 
-## 4. What does the useEffect hook do, and why did you need it to load the JSON data?
+**5. Why does every item in a .map() list need a unique key prop?**
+React needs a unique `key` prop so it can keep track of which specific items in a list have changed, been added, or been removed. This makes UI updates highly efficient rather than re-rendering the entire list.
 
-The `useEffect` hook allows a React component to perform side effects, such as fetching data, setting timers, or subscribing to external services.
+**6. What is conditional rendering? Show one place you used it.**
+Conditional rendering is showing different UI elements based on a condition (like an `if-else` statement). I used it in `StackSidebar.tsx` to show an "Empty Stack" message if `stack.length === 0`, and the actual list of technologies if the stack had items.
 
-I used `useEffect` in `TechGrid.tsx` to fetch the technology data when the component first mounted. The fetched data is then stored in state and displayed in the technology grid.
-
-## 5. Why does every item in a .map() list need a unique key prop?
-
-React uses the `key` prop to identify individual items in a list. A unique key helps React determine which items have changed, been added, or been removed so it can update the interface efficiently.
+**7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?**
+You pass data from parent to child using `props` (like `<TechCard tech={data} />`). A child sends data back to the parent by calling a function passed down via props (or Context), such as the child calling `addToStack(tech)` which updates the parent/global state.
