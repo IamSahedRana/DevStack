@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import { toast } from 'react-toastify';
 
-// This replaces your old tech.ts file
+
 export interface Technology {
   id: string;
   name: string;
@@ -44,7 +44,6 @@ export const StackProvider = ({ children }: { children: ReactNode }) => {
     toast.warn('Stack cleared.');
   };
 
-  // This toggle function makes the button click logic much cleaner
   const toggleStack = (item: Technology) => {
     if (stack.find((t) => t.id === item.id)) {
       removeFromStack(item.id, item.name);
@@ -55,7 +54,6 @@ export const StackProvider = ({ children }: { children: ReactNode }) => {
 
   const isSelected = (id: string) => stack.some((t) => t.id === id);
 
-// ... (previous context code)
 
   return (
     <StackContext.Provider
@@ -66,7 +64,6 @@ export const StackProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Add this exact comment line above the hook
 // eslint-disable-next-line react-refresh/only-export-components
 export const useStack = () => {
   const context = useContext(StackContext);

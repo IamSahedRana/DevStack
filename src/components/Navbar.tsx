@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <div className="navbar sticky top-0 z-50 bg-base-100 py-4 container mx-auto px-4 lg:px-8">
 
-      {/* LEFT SIDE: Hamburger (Mobile) & Logo (Desktop) */}
+
       <div className="navbar-start w-1/4 lg:w-1/3">
 
         <div className="dropdown lg:hidden">
@@ -67,7 +67,6 @@ export default function Navbar() {
 
       </div>
 
-      {/* CENTER: Logo (Mobile) & Nav Links (Desktop) */}
       <div className="navbar-center flex-1 justify-center lg:w-1/3">
 
         <a className="flex lg:hidden items-center">
@@ -113,7 +112,6 @@ export default function Navbar() {
         </ul>
       </div>
 
-      {/* RIGHT SIDE: Auth Buttons */}
       <div className="navbar-end w-auto lg:w-1/3 gap-2 sm:gap-4 justify-end flex-1">
 
         <a className="btn btn-ghost text-gray-600 font-medium hover:bg-transparent hover:text-gray-900 focus:bg-transparent active:bg-transparent px-2 sm:px-4">
