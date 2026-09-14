@@ -14,6 +14,7 @@ export const StackSidebar: React.FC = () => {
             : `${stack.length} Technology${stack.length > 1 ? 's' : ''} Selected`}
         </p>
 
+        
         <div className="space-y-2.5 min-h-[120px]">
           {stack.length === 0 ? (
             <div className="w-full h-24 border-2 border-dashed border-gray-100 rounded-2xl flex items-center justify-center text-sm text-gray-300">

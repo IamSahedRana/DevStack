@@ -163,7 +163,6 @@ export default function Footer() {
           </div>
         </div>
 
-
         <div className="h-6 sm:h-8" />
       </div>
     </footer>
