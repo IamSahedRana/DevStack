@@ -1,7 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 import { toast } from 'react-toastify';
 
-
 export interface Technology {
   id: string;
   name: string;
@@ -12,6 +11,7 @@ export interface Technology {
   difficulty: string;
   badge: string;
 }
+
 
 export interface StackContextType {
   stack: Technology[];
@@ -53,7 +53,6 @@ export const StackProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const isSelected = (id: string) => stack.some((t) => t.id === id);
-
 
   return (
     <StackContext.Provider
