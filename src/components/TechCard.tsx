@@ -37,7 +37,7 @@ export const TechCard: React.FC<{ tech: Technology }> = ({ tech }) => {
           : 'bg-transparent hover:bg-gradient-to-r hover:from-[#8a38cc] hover:via-[#d946ef] hover:to-[#f59e0b]'
       }`}
     >
-      {/* Card content */}
+
       <div
         className={`relative flex h-full flex-col rounded-[14px] p-6 transition-all duration-300 ${
           selected
